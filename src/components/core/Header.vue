@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar class="white">
+    <v-app-bar class="cover" elevate-on-scroll app>
       <v-row>
         <v-col class="ms-10" cols="1">
           <v-img
@@ -12,7 +12,7 @@
         </v-col>
         <v-col cols="2" class="ms-n16">
           <h1 class="text-start mt-1 logo">
-            Pool<span class="green--text darker-4">X</span>
+            Pool<span class="primary--text">X</span>
           </h1>
         </v-col>
       </v-row>
