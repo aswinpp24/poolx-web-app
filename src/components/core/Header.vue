@@ -15,6 +15,10 @@
             Pool<span class="primary--text">X</span>
           </h1>
         </v-col>
+        <v-spacer></v-spacer>
+        <v-btn outlined color="primary" class="mt-6 me-4 text-capitalize"
+          >Sign In</v-btn
+        >
       </v-row>
     </v-app-bar>
   </div>

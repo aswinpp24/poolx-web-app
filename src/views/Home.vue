@@ -55,7 +55,7 @@
       style=" border-radius: 50% 50% 100% 9% / 12% 12% 20% 10%;
         box-shadow: 0px 4px 4px rgba(55, 198, 225, 0.19);"
     >
-      <v-row class="white--text text-h3 mb-8" justify="center">
+      <v-row class="white--text text-h3 mb-12" justify="center">
         Key Features
       </v-row>
       <v-row class="mb-16 mt-8">
@@ -75,6 +75,13 @@
         </v-col>
       </v-row>
     </v-container>
+    <v-container fluid>
+      <v-row justify="center" class="text-h4 font-weight-bold">
+        Benefits At Every Level
+      </v-row>
+
+      <BenefitCard />
+    </v-container>
   </v-container>
 </template>
 
@@ -82,12 +89,13 @@
 import Vue from "vue";
 import FeatureLeft from "../components/home/FeatureLeft.vue";
 import FeatureRight from "../components/home/FeatureRight.vue";
-
+import BenefitCard from "../components/home/BenefitCard.vue";
 export default Vue.extend({
   name: "Home",
   components: {
     FeatureLeft,
     FeatureRight,
+    BenefitCard,
   },
 });
 </script>
