@@ -75,7 +75,7 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-container fluid>
+    <v-container>
       <v-row justify="center" class="text-h4 font-weight-bold">
         Benefits At Every Level
       </v-row>

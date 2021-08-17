@@ -1,6 +1,6 @@
 <template>
-  <v-row class="px-16 mt-16 mb-16">
-    <v-col cols="4" v-for="item in items" :key="item.title" class="px-5">
+  <v-row class=" mt-16 mb-16">
+    <v-col cols="4" v-for="item in items" :key="item.title" class="px-4">
       <v-card class="pt-10 pb-10" color="grey lighten-4" elevation="0">
         <v-img :src="item.image[0]" height="150" contain position="center" />
         <v-row justify="center" class="text-h5 mt-2 mb-2 font-weight-bold">
