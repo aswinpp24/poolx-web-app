@@ -82,6 +82,56 @@
 
       <BenefitCard />
     </v-container>
+    <v-container class="primary pa-0 ma-0 mb-16" fluid>
+      <h1>Aswin</h1>
+      <h1>Aswin</h1>
+      <h1>Aswin</h1>
+      <h1>Aswin</h1>
+      <h1>Aswin</h1>
+      <h1>Aswin</h1>
+    </v-container>
+    <v-container>
+      <h1>Aswin</h1>
+      <h1>Aswin</h1>
+      <h1>Aswin</h1>
+      <h1>Aswin</h1>
+      <h1>Aswin</h1>
+      <h1>Aswin</h1>
+    </v-container>
+    <v-container class="black mt-16 ma-0 pa-0 " fluid>
+      <v-row class="white--text px-16 pb-5">
+        <v-col cols="4">
+          <v-row>
+            <v-col cols="2">
+              <v-img
+                :src="require('@/assets/logo-poolx.png')"
+                contain
+                height="60"
+              />
+            </v-col>
+            <v-col cols="7">
+              <h1 class="text-start mt-1 logo">
+                Pool<span class="primary--text">X</span>
+              </h1>
+              <label class="text-body-2">Office commute made easier.</label>
+            </v-col>
+          </v-row>
+          <v-row class="text-body-2 mt-16">
+            &copy;2021. PoolX. All rights Reserved.
+          </v-row>
+        </v-col>
+        <v-col cols="4"> </v-col>
+        <v-col cols="4" class="mt-6">
+          <v-row class="text-h5">
+            Contact Us
+          </v-row>
+          <v-row class="text-body-2 mt-6">
+            If you have any questions about PoolX, feel free to get in touch
+            with us at support@poolx.com.
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-container>
   </v-container>
 </template>
 

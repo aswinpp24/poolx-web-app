@@ -16,9 +16,7 @@
           </h1>
         </v-col>
         <v-spacer></v-spacer>
-        <v-btn outlined color="primary" class="mt-6 me-4 text-capitalize"
-          >Sign In</v-btn
-        >
+        <SignIn />
       </v-row>
     </v-app-bar>
   </div>
@@ -29,3 +27,11 @@
   font-family: Michroma;
 }
 </style>
+<script>
+import SignIn from "./SignIn.vue";
+export default {
+  components: {
+    SignIn,
+  },
+};
+</script>
