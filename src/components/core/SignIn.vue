@@ -24,7 +24,7 @@
         <v-col cols="6">
           <v-row class="text-end text-body-1 mt-5 me-5" justify="end">
             New User?
-            <Register />
+            <Register @click="close" />
           </v-row>
           <v-row class="text-h5 mt-14">
             Welcome Back!
