@@ -102,9 +102,9 @@
       <v-row class="white--text px-16 pb-5">
         <v-col cols="4">
           <v-row>
-            <v-col cols="2">
+            <v-col cols="2" class="ms-n3">
               <v-img
-                :src="require('@/assets/logo-poolx.png')"
+                :src="require('@/assets/logo-poolx-footer.png')"
                 contain
                 height="60"
               />
@@ -128,6 +128,11 @@
           <v-row class="text-body-2 mt-6">
             If you have any questions about PoolX, feel free to get in touch
             with us at support@poolx.com.
+          </v-row>
+          <v-row class="mt-10">
+            <v-icon color="white">mdi-instagram</v-icon>
+            <v-icon color="white" class="ms-5">mdi-twitter</v-icon>
+            <v-icon color="white" class="ms-5">mdi-facebook</v-icon>
           </v-row>
         </v-col>
       </v-row>
