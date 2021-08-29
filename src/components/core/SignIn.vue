@@ -33,7 +33,7 @@
               <v-col cols="10" class="pa-0">
                 <v-text-field
                   outlined
-                  label="Username"
+                  label="Phone Number"
                   prepend-inner-icon="mdi-account"
                   dense
                   v-model="username"
