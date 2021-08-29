@@ -37,6 +37,10 @@
                   outlined
                   label="Name"
                   prepend-inner-icon="mdi-account"
+                  filled
+                        :rules="[
+                          requiredValidator('Name')
+                        ]"
                   dense
                 ></v-text-field>
               </v-col>
@@ -47,6 +51,11 @@
                   outlined
                   label="Phone Number"
                   prepend-inner-icon="mdi-account"
+                  filled
+                        :rules="[
+                          requiredValidator('Phone number'),
+                          phoneLengthValidator('phone', 10)
+                        ]"
                   dense
                 ></v-text-field>
               </v-col>
@@ -55,6 +64,12 @@
               <v-col cols="10" class="pa-0">
                 <v-text-field
                   label="Password"
+                  type="password"
+                  filled
+                        :rules="[
+                          requiredValidator('password')
+                        ]"
+                              
                   prepend-inner-icon="mdi-lock"
                   outlined
                   dense
@@ -65,6 +80,11 @@
               <v-col cols="10" class="pa-0">
                 <v-text-field
                   label="Confirm Password"
+                  filled
+                        :rules="[
+                          requiredValidator('password')
+                        ]"
+                  type="password"
                   prepend-inner-icon="mdi-lock"
                   outlined
                   dense
@@ -99,9 +119,18 @@
   </v-dialog>
 </template>
 <script>
+import {
+  requiredValidator,
+  // phoneValidator,
+  minLengthValidator,
+  phoneLengthValidator,
+} from "../../methods/validators";
 export default {
   data() {
     return {
+      requiredValidator: requiredValidator,
+      phoneLengthValidator: phoneLengthValidator,
+      minLengthValidator:minLengthValidator,
       dialog: false,
       items: ["User", "Driver", "Organization"],
     };
