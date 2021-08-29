@@ -1,10 +1,6 @@
 <template>
   <v-dialog v-model="dialog" max-width="800px">
-    <template v-slot:activator="{ on }">
-      <span v-on="on" class="primary--text ms-2" style="cursor:pointer"
-        >SignUp</span
-      >
-    </template>
+    <template v-slot:activator="{ on }"> </template>
     <v-card class="pa-3">
       <v-row>
         <v-spacer></v-spacer>
@@ -38,9 +34,7 @@
                   label="Name"
                   prepend-inner-icon="mdi-account"
                   filled
-                        :rules="[
-                          requiredValidator('Name')
-                        ]"
+                  :rules="[requiredValidator('Name')]"
                   dense
                 ></v-text-field>
               </v-col>
@@ -52,10 +46,10 @@
                   label="Phone Number"
                   prepend-inner-icon="mdi-account"
                   filled
-                        :rules="[
-                          requiredValidator('Phone number'),
-                          phoneLengthValidator('phone', 10)
-                        ]"
+                  :rules="[
+                    requiredValidator('Phone number'),
+                    phoneLengthValidator('phone', 10),
+                  ]"
                   dense
                 ></v-text-field>
               </v-col>
@@ -66,10 +60,7 @@
                   label="Password"
                   type="password"
                   filled
-                        :rules="[
-                          requiredValidator('password')
-                        ]"
-                              
+                  :rules="[requiredValidator('password')]"
                   prepend-inner-icon="mdi-lock"
                   outlined
                   dense
@@ -81,9 +72,7 @@
                 <v-text-field
                   label="Confirm Password"
                   filled
-                        :rules="[
-                          requiredValidator('password')
-                        ]"
+                  :rules="[requiredValidator('password')]"
                   type="password"
                   prepend-inner-icon="mdi-lock"
                   outlined
@@ -130,7 +119,7 @@ export default {
     return {
       requiredValidator: requiredValidator,
       phoneLengthValidator: phoneLengthValidator,
-      minLengthValidator:minLengthValidator,
+      minLengthValidator: minLengthValidator,
       dialog: false,
       items: ["User", "Driver", "Organization"],
     };
