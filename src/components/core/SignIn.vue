@@ -26,13 +26,9 @@
             New User?
             <Register />
           </v-row>
-          <v-row class="text-h5 mt-14">
-            Welcome Back!
-          </v-row>
-          <v-row class="text-body-2 grey--text">
-            Login to continue
-          </v-row>
-          <v-form class="mt-16">
+          <v-row class="text-h5 mt-14"> Welcome Back! </v-row>
+          <v-row class="text-body-2 grey--text"> Login to continue </v-row>
+          <v-form @submit.prevent="login()" class="mt-16">
             <v-row>
               <v-col cols="10" class="pa-0">
                 <v-text-field
@@ -40,6 +36,7 @@
                   label="Username"
                   prepend-inner-icon="mdi-account"
                   dense
+                  v-model="username"
                 ></v-text-field>
               </v-col>
             </v-row>
@@ -50,6 +47,7 @@
                   prepend-inner-icon="mdi-lock"
                   outlined
                   dense
+                  v-model="password"
                 ></v-text-field>
               </v-col>
             </v-row>
@@ -59,6 +57,7 @@
                 color="primary"
                 class="white--text px-12 py-6"
                 rounded
+                type="submit"
               >
                 Login
               </v-btn>
@@ -71,16 +70,40 @@
 </template>
 <script>
 import Register from "./Register.vue";
+import axios from "axios";
+
+const BASE_URL = "http://localhost:8080/";
+const LOGIN_URL = "login";
+
 export default {
   components: { Register },
   data() {
     return {
       dialog: false,
+      username: "",
+      password: "",
     };
   },
   methods: {
     close() {
       this.dialog = false;
+    },
+
+    login() {
+      console.log("Success");
+      axios
+        .post(BASE_URL + LOGIN_URL, {
+          body: {
+            username: this.username,
+            password: this.password,
+          },
+        })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((e) => {
+          console.error(e);
+        });
     },
   },
 };
