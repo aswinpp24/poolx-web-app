@@ -72,8 +72,8 @@
 import Register from "./Register.vue";
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8080/";
-const LOGIN_URL = "login";
+const BASE_URL = "http://192.168.0.185:8086/";
+const LOGIN_URL = "api/v1/users/login";
 
 export default {
   components: { Register },
@@ -93,13 +93,12 @@ export default {
       console.log("Success");
       axios
         .post(BASE_URL + LOGIN_URL, {
-          body: {
-            username: this.username,
+            userName: this.username,
             password: this.password,
-          },
-        })
+          })
         .then((res) => {
           console.log(res);
+            localStorage.setItem('isAuthenticated', true);
         })
         .catch((e) => {
           console.error(e);
