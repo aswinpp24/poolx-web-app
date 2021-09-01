@@ -110,7 +110,7 @@
                 <v-text-field
                   outlined
                   label="Phone Number"
-                  prepend-inner-icon="mdi-account"
+                  prepend-inner-icon="mdi-phone"
                   :rules="[
                     requiredValidator('Phone number'),
                     phoneLengthValidator('phone', 10),
@@ -146,7 +146,7 @@
             <v-row>
               <v-col cols="10" class="pa-0">
                 <v-select
-                  prepend-inner-icon="mdi-account"
+                  prepend-inner-icon="mdi-account-group"
                   outlined
                   dense
                   :items="items"
