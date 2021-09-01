@@ -1,8 +1,25 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
+import User from "../views/User.vue";
 
 Vue.use(VueRouter);
+
+function guardMyroute(to: any, from: any, next: any) {
+  let isAuthenticated = false;
+  //this is just an example. You will have to find a better or 
+  // centralised way to handle you localstorage data handling 
+  if (localStorage.getItem('isAuthenticated'))
+    isAuthenticated = true;
+  else
+    isAuthenticated = false;
+  if (isAuthenticated) {
+    next(); // allow to enter route
+  }
+  else {
+    next('/'); // go to '/login';
+  }
+}
 
 const routes: Array<RouteConfig> = [
   {
@@ -10,6 +27,12 @@ const routes: Array<RouteConfig> = [
     name: "Home",
     component: Home,
   },
+  {
+    path: "/user",
+    name: "User",
+    beforeEnter: guardMyroute,
+    component: User,
+  }
   // {
   //   path: '/about',
   //   name: 'About',

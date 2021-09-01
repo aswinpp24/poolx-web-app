@@ -60,7 +60,7 @@
             <v-row class="text-body-2 grey--text">
               Login to continue
             </v-row>
-            <v-form class="mt-16">
+            <v-form class="mt-16" @submit.prevent="login()">
               <v-row>
                 <v-col cols="10" class="pa-0">
                   <v-text-field
@@ -68,6 +68,7 @@
                     label="Phone Number"
                     prepend-inner-icon="mdi-account"
                     dense
+                    v-model="username"
                   ></v-text-field>
                 </v-col>
               </v-row>
@@ -78,6 +79,7 @@
                     prepend-inner-icon="mdi-lock"
                     outlined
                     dense
+                    v-model="password"
                   ></v-text-field>
                 </v-col>
               </v-row>
@@ -116,6 +118,7 @@
                     phoneLengthValidator('phone', 10),
                   ]"
                   dense
+                  v-model="username"
                 ></v-text-field>
               </v-col>
             </v-row>
@@ -140,6 +143,7 @@
                   prepend-inner-icon="mdi-lock"
                   outlined
                   dense
+                  v-model="password"
                 ></v-text-field>
               </v-col>
             </v-row>
@@ -160,6 +164,7 @@
                 color="primary"
                 class="white--text px-12 py-6 mb-8"
                 rounded
+                type="submit"
               >
                 Register
               </v-btn>
@@ -171,6 +176,11 @@
   </v-dialog>
 </template>
 <script>
+import axios from "axios";
+
+const BASE_URL = "http://192.168.0.185:8086/";
+const LOGIN_URL = "api/v1/users/login";
+
 import {
   requiredValidator,
   // phoneValidator,
@@ -182,6 +192,8 @@ export default {
   data() {
     return {
       dialog: false,
+      username: "",
+      password: "",
       register: false,
       requiredValidator: requiredValidator,
       phoneLengthValidator: phoneLengthValidator,
@@ -199,6 +211,22 @@ export default {
     },
     close() {
       this.dialog = false;
+    },
+
+    login() {
+      console.log("Success");
+      axios
+        .post(BASE_URL + LOGIN_URL, {
+            userName: this.username,
+            password: this.password,
+          })
+        .then((res) => {
+          console.log(res);
+            localStorage.setItem('isAuthenticated', true);
+        })
+        .catch((e) => {
+          console.error(e);
+        });
     },
   },
 };
