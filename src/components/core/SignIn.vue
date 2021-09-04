@@ -68,7 +68,7 @@
                     label="Phone Number"
                     prepend-inner-icon="mdi-account"
                     dense
-                    v-model="username"
+                    v-model="userName"
                   ></v-text-field>
                 </v-col>
               </v-row>
@@ -89,6 +89,7 @@
                   color="primary"
                   class="white--text px-12 py-6"
                   rounded
+                  type="submit"
                 >
                   Login
                 </v-btn>
@@ -118,7 +119,6 @@
                     phoneLengthValidator('phone', 10),
                   ]"
                   dense
-                  v-model="username"
                 ></v-text-field>
               </v-col>
             </v-row>
@@ -193,6 +193,7 @@ export default {
     return {
       dialog: false,
       username: "",
+      userName:"",
       password: "",
       register: false,
       requiredValidator: requiredValidator,
